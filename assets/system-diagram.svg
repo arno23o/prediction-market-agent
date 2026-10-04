@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1022" viewBox="0 0 900 1022" role="img" aria-labelledby="diagram-title" aria-describedby="diagram-desc">
+<title id="diagram-title">How the betting agent works</title>
+<desc id="diagram-desc">The system is a loop of five parts. 1. Attempt: a new Claude Code session researches the markets and writes a proposal: its reasoning, a prediction, and the bets it wants. 2. Checks and orders: code checks every bet against fixed rules and money limits, then places the orders. 3. Kalshi exchange: orders fill at the exchange, and every market settles within five days. 4. Ledger: one database holds every attempt, every bet, every rejected bet and every result. 5. Daily review: once a day a Claude Code session ranks yesterday's attempts against one another within their daily cohort, writes guidance, and selects example sets for director and focused attempts. Its guidance and examples go to the next attempts, which can also search past attempts in the ledger. A panel above the Attempt box zooms into it: the scheduler starts 15 attempts a day, and each one is assigned one of four groups at random: 1 baseline, 6 static, 7 director and 1 focused. Each attempt writes one proposal with zero or more bets, and each bet is one market, one side, and 1 to 3 contracts. The four groups differ only in what the attempt reads before it starts. Baseline reads nothing about past attempts and is the control group. Static reads the set of 10 most recent settled attempts. Director reads guidance and past attempts selected by the daily review model, which compares earlier attempts. Focused reads one focus chosen by the daily review model and past attempts selected for that theme. Legend: purple is a Claude Code session (the model decides), blue is Python code (fixed rules), green is the record, and grey is external feedback.</desc>
+<rect x="0.5" y="0.5" width="899" height="1021" rx="12" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="1"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<path d="M24,36 Q24,24 36,24 L864,24 Q876,24 876,36 L876,444.9 Q876,456.9 864,456.9 L312,456.9 C276,456.9 272,500.9 248,500.9 L24,500.9 Z" fill="#FCFAFF" stroke="none"/>
+<path d="M24,500.9 L24,36 Q24,24 36,24 L864,24 Q876,24 876,36 L876,444.9 Q876,456.9 864,456.9 L312,456.9 C276,456.9 272,500.9 248,500.9" fill="none" stroke="#7E22CE" stroke-width="1.5" stroke-dasharray="7 5"/>
+<circle cx="56" cy="56" r="12" fill="#7E22CE"/>
+<text x="56" y="61" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">1</text>
+<text x="78" y="62" font-size="17" font-weight="700" fill="#581C87">Attempt types</text>
+<text font-size="14" fill="#1F2937"><tspan x="44" y="89">The four groups differ only in what the attempt reads before it starts.</tspan></text>
+<rect x="44" y="107" width="192.5" height="185.5" rx="8" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.25"/>
+<rect x="65" y="123" width="26" height="36" rx="3" fill="#FFFFFF" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="110" y="126" width="12" height="12" rx="2" fill="#94A3B8" stroke="#475569" stroke-width="1"/>
+<text x="129" y="137" font-size="15" font-weight="700" fill="#1F2937">Baseline</text>
+<text x="110" y="157" font-size="13" fill="#4B5563">1 a day</text>
+<text font-size="14" fill="#1F2937"><tspan x="58" y="183.4">Reads nothing about</tspan><tspan x="58" y="202.4">past attempts.</tspan><tspan x="58" y="221.4">The control group.</tspan></text>
+<rect x="250.5" y="107" width="192.5" height="185.5" rx="8" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.25"/>
+<rect x="266.5" y="125" width="24" height="16" rx="3" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.5"/>
+<rect x="272.5" y="133" width="24" height="16" rx="3" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.5"/>
+<rect x="278.5" y="141" width="24" height="16" rx="3" fill="#EDE9FE" stroke="#6D28D9" stroke-width="1.5"/>
+<line x1="282.5" y1="146" x2="294.5" y2="146" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="282.5" y1="151" x2="294.5" y2="151" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="316.5" y="126" width="12" height="12" rx="2" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<text x="335.5" y="137" font-size="15" font-weight="700" fill="#1F2937">Static</text>
+<text x="316.5" y="157" font-size="13" fill="#4B5563">6 a day</text>
+<text font-size="14" fill="#1F2937"><tspan x="264.5" y="183.4">Reads the set of 10</tspan><tspan x="264.5" y="202.4">most recent settled</tspan><tspan x="264.5" y="221.4">attempts.</tspan></text>
+<rect x="457" y="107" width="192.5" height="185.5" rx="8" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.25"/>
+<rect x="472" y="123" width="22" height="32" rx="3" fill="#FFFFFF" stroke="#4B5563" stroke-width="1.5"/>
+<line x1="477" y1="130" x2="489" y2="130" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="477" y1="136" x2="489" y2="136" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="477" y1="142" x2="489" y2="142" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="477" y1="148" x2="489" y2="148" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="488" y="137" width="18" height="13" rx="3" fill="#E9D5FF" stroke="#581C87" stroke-width="1.5"/>
+<rect x="492" y="145" width="18" height="13" rx="3" fill="#E9D5FF" stroke="#581C87" stroke-width="1.5"/>
+<rect x="523" y="126" width="12" height="12" rx="2" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<text x="542" y="137" font-size="15" font-weight="700" fill="#1F2937">Director</text>
+<text x="523" y="157" font-size="13" fill="#4B5563">7 a day</text>
+<text font-size="14" fill="#1F2937"><tspan x="471" y="183.4">Reads guidance from the</tspan><tspan x="471" y="202.4">daily review model, which</tspan><tspan x="471" y="221.4">compares past attempts,</tspan><tspan x="471" y="240.4">plus its selected examples.</tspan></text>
+<rect x="663.5" y="107" width="192.5" height="185.5" rx="8" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.25"/>
+<rect x="684.5" y="123" width="26" height="36" rx="3" fill="#FFFFFF" stroke="#4B5563" stroke-width="1.5"/>
+<line x1="689.5" y1="130" x2="705.5" y2="130" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="689.5" y1="136" x2="705.5" y2="136" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="688.5" y="143" width="18" height="11" rx="2" fill="#F59E0B" stroke="#B45309" stroke-width="1.5"/>
+<rect x="729.5" y="126" width="12" height="12" rx="2" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
+<text x="748.5" y="137" font-size="15" font-weight="700" fill="#1F2937">Focused</text>
+<text x="729.5" y="157" font-size="13" fill="#4B5563">1 a day</text>
+<text font-size="14" fill="#1F2937"><tspan x="677.5" y="183.4">Reads one focus chosen</tspan><tspan x="677.5" y="202.4">by the daily review model,</tspan><tspan x="677.5" y="221.4">with past attempts</tspan><tspan x="677.5" y="240.4">selected for that theme.</tspan></text>
+<g transform="translate(0,60)">
+<text font-size="14" fill="#1F2937"><tspan x="44" y="273.9">The scheduler starts 15 attempts a day.</tspan><tspan x="44" y="292.9">Each one gets a group at random.</tspan></text>
+<rect x="44" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="71" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<rect x="98" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="125" y="308.9" width="22" height="22" rx="3" fill="#94A3B8" stroke="#475569" stroke-width="1"/>
+<rect x="152" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<rect x="179" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="206" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="233" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<rect x="260" y="308.9" width="22" height="22" rx="3" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
+<rect x="287" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="314" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<rect x="341" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="368" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<rect x="395" y="308.9" width="22" height="22" rx="3" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+<rect x="422" y="308.9" width="22" height="22" rx="3" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1"/>
+<text x="44" y="352.9" font-size="13" fill="#4B5563">1 baseline, 6 static, 7 director, 1 focused</text>
+<line x1="472" y1="263.5" x2="472" y2="355.9" stroke="#E9D5FF" stroke-width="1.5"/>
+<text font-size="14" fill="#1F2937"><tspan x="500" y="273.9">Each attempt writes one proposal</tspan><tspan x="500" y="292.9">with zero or more bets.</tspan></text>
+<rect x="500" y="329.9" width="22" height="22" rx="3" fill="#F3E8FF" stroke="#7E22CE" stroke-width="1.5"/>
+<path d="M522,340.9 C544,340.9 544,314.9 566,314.9" fill="none" stroke="#7E22CE" stroke-width="1.25"/>
+<rect x="566" y="304.9" width="46" height="20" rx="10.0" fill="#FFFFFF" stroke="#7E22CE" stroke-width="1.25"/>
+<text x="589" y="319.4" text-anchor="middle" font-size="13" fill="#581C87">bet</text>
+<path d="M522,340.9 C544,340.9 544,340.9 566,340.9" fill="none" stroke="#7E22CE" stroke-width="1.25"/>
+<rect x="566" y="330.9" width="46" height="20" rx="10.0" fill="#FFFFFF" stroke="#7E22CE" stroke-width="1.25"/>
+<text x="589" y="345.4" text-anchor="middle" font-size="13" fill="#581C87">bet</text>
+<path d="M522,340.9 C544,340.9 544,366.9 566,366.9" fill="none" stroke="#7E22CE" stroke-width="1.25"/>
+<rect x="566" y="356.9" width="46" height="20" rx="10.0" fill="#FFFFFF" stroke="#7E22CE" stroke-width="1.25"/>
+<text x="589" y="371.4" text-anchor="middle" font-size="13" fill="#581C87">bet</text>
+<path d="M622,305.9 q6,0 6,6 L628,334.9 q0,6 6,6 q-6,0 -6,6 L628,369.9 q0,6 -6,6" fill="none" stroke="#4B5563" stroke-width="1.25"/>
+<text font-size="14" fill="#1F2937"><tspan x="644" y="326.9">Each bet is one market,</tspan><tspan x="644" y="345.9">one side, and</tspan><tspan x="644" y="364.9">1 to 3 contracts.</tspan></text>
+<rect x="24" y="440.9" width="224" height="164" rx="10" fill="#F3E8FF" stroke="#7E22CE" stroke-width="1.5"/>
+<circle cx="52" cy="468.9" r="12" fill="#7E22CE"/>
+<text x="52" y="473.9" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">1</text>
+<text x="74" y="474.9" font-size="17" font-weight="700" fill="#581C87">Attempt</text>
+<text font-size="14" fill="#1F2937"><tspan x="40" y="508.9">A new Claude Code session</tspan><tspan x="40" y="527.9">researches the markets and</tspan><tspan x="40" y="546.9">writes a proposal: its</tspan><tspan x="40" y="565.9">reasoning, a prediction, and</tspan><tspan x="40" y="584.9">the bets it wants.</tspan></text>
+<rect x="338" y="440.9" width="224" height="164" rx="10" fill="#E0F2FE" stroke="#0369A1" stroke-width="1.5"/>
+<circle cx="366" cy="468.9" r="12" fill="#0369A1"/>
+<text x="366" y="473.9" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">2</text>
+<text x="388" y="474.9" font-size="17" font-weight="700" fill="#0C4A6E">Checks and orders</text>
+<text font-size="14" fill="#1F2937"><tspan x="354" y="508.9">The harness checks bets</tspan><tspan x="354" y="527.9">against fixed rules and</tspan><tspan x="354" y="546.9">money limits, then places</tspan><tspan x="354" y="565.9">the orders.</tspan></text>
+<rect x="652" y="440.9" width="224" height="164" rx="10" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.5"/>
+<circle cx="680" cy="468.9" r="12" fill="#4B5563"/>
+<text x="680" y="473.9" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">3</text>
+<text x="702" y="474.9" font-size="17" font-weight="700" fill="#1F2937">Kalshi exchange</text>
+<text font-size="14" fill="#1F2937"><tspan x="668" y="508.9">Orders fill at the exchange.</tspan><tspan x="668" y="527.9">Every market settles within</tspan><tspan x="668" y="546.9">five days.</tspan></text>
+<rect x="338" y="712.9" width="538" height="184" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="1.5"/>
+<circle cx="366" cy="740.9" r="12" fill="#15803D"/>
+<text x="366" y="745.9" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">4</text>
+<text x="388" y="746.9" font-size="17" font-weight="700" fill="#14532D">Ledger</text>
+<text font-size="14" fill="#1F2937"><tspan x="354" y="780.9">One database holds every attempt, every bet,</tspan><tspan x="354" y="799.9">every rejected bet and every result.</tspan></text>
+<rect x="24" y="712.9" width="224" height="184" rx="10" fill="#F3E8FF" stroke="#7E22CE" stroke-width="1.5"/>
+<circle cx="52" cy="740.9" r="12" fill="#7E22CE"/>
+<text x="52" y="745.9" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">5</text>
+<text x="74" y="746.9" font-size="17" font-weight="700" fill="#581C87">Daily review</text>
+<text font-size="14" fill="#1F2937"><tspan x="40" y="780.9">Ranks yesterday's attempts</tspan><tspan x="40" y="799.9">against each other within</tspan><tspan x="40" y="818.9">their daily cohort; writes</tspan><tspan x="40" y="837.9">guidance and picks example</tspan><tspan x="40" y="856.9">sets for director and</tspan><tspan x="40" y="875.9">focused attempts.</tspan></text>
+<path d="M136,368.6 L136,430.1" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="136,440.1 131,430.1 141,430.1" fill="#374151"/>
+<path d="M248.8,522.9 L327.2,522.9" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="337.2,522.9 327.2,527.9 327.2,517.9" fill="#374151"/>
+<rect x="260.4" y="497.4" width="65.3" height="20.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151" text-anchor="middle"><tspan x="293" y="511">proposal</tspan></text>
+<path d="M562.8,522.9 L641.2,522.9" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="651.2,522.9 641.2,527.9 641.2,517.9" fill="#374151"/>
+<rect x="581.3" y="497.4" width="51.5" height="20.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151" text-anchor="middle"><tspan x="607" y="511">orders</tspan></text>
+<path d="M764,605.6 L764,702.1" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="764,712.1 759,702.1 769,702.1" fill="#374151"/>
+<rect x="770" y="640.7" width="59.7" height="36.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151"><tspan x="776" y="654.3">fills and</tspan><tspan x="776" y="670.3">results</tspan></text>
+<path d="M450,605.6 L450,702.1" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="450,712.1 445,702.1 455,702.1" fill="#374151"/>
+<rect x="456" y="640.7" width="96.6" height="36.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151"><tspan x="462" y="654.3">rejected bets,</tspan><tspan x="462" y="670.3">with reasons</tspan></text>
+<path d="M337.2,804.9 L258.8,804.9" fill="none" stroke="#374151" stroke-width="1.75" stroke-linejoin="miter"/>
+<polygon points="248.8,804.9 258.8,799.9 258.8,809.9" fill="#374151"/>
+<rect x="253.2" y="763.4" width="79.7" height="36.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151" text-anchor="middle"><tspan x="293" y="777">attempts</tspan><tspan x="293" y="793">and results</tspan></text>
+<path d="M80,712.1 L80,617.6" fill="none" stroke="#7E22CE" stroke-width="2.5" stroke-linejoin="miter"/>
+<polygon points="80,605.6 86,617.6 74,617.6" fill="#7E22CE"/>
+<rect x="86" y="614.9" width="94.6" height="36.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151"><tspan x="92" y="628.5">guidance and</tspan><tspan x="92" y="644.5">examples</tspan></text>
+<path d="M374,712.1 L374,656.9 L212,656.9 L212,615.6" fill="none" stroke="#374151" stroke-width="1.75" stroke-dasharray="6 5" stroke-linejoin="miter"/>
+<polygon points="212,605.6 217,615.6 207,615.6" fill="#374151"/>
+<rect x="244.6" y="661.9" width="96.8" height="36.5" rx="4" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<text font-size="13" fill="#374151" text-anchor="middle"><tspan x="293" y="675.5">search of</tspan><tspan x="293" y="691.5">past attempts</tspan></text>
+<rect x="61.7" y="923.9" width="14" height="14" rx="3" fill="#F3E8FF" stroke="#7E22CE" stroke-width="1.5"/>
+<text x="83.7" y="935.4" font-size="13" fill="#374151">Claude Code session (the model decides)</text>
+<rect x="372.9" y="923.9" width="14" height="14" rx="3" fill="#E0F2FE" stroke="#0369A1" stroke-width="1.5"/>
+<text x="394.9" y="935.4" font-size="13" fill="#374151">Python code (fixed rules)</text>
+<rect x="583.3" y="923.9" width="14" height="14" rx="3" fill="#DCFCE7" stroke="#15803D" stroke-width="1.5"/>
+<text x="605.3" y="935.4" font-size="13" fill="#374151">The record</text>
+<rect x="706.1" y="923.9" width="14" height="14" rx="3" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.5"/>
+<text x="728.1" y="935.4" font-size="13" fill="#374151">External feedback</text>
+</g>
+</g>
+</svg>
+
+

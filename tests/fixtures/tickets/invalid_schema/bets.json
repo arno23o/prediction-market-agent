@@ -1,0 +1,12 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "VB-1",
+      "side": "yes",
+      "limit_price": "0.42",
+      "rationale": "malformed limit price",
+      "contracts": 1
+    }
+  ]
+}

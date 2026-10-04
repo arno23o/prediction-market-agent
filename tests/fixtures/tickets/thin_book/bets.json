@@ -1,0 +1,19 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "ET-1",
+      "side": "yes",
+      "limit_price": "0.5000",
+      "rationale": "three contracts against a one-deep book",
+      "contracts": 3
+    },
+    {
+      "ticker": "ET-2",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "three contracts, one contract resting",
+      "contracts": 3
+    }
+  ]
+}

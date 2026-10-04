@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    A macOS launchd job that runs `betting-agent tick` every 15 minutes.
+
+    This file is a template: __REPO__ stands for the repository root and __HOME__ for
+    your home directory. To install it, run from the repository root:
+
+        mkdir -p data/logs
+        sed -e "s#__REPO__#$PWD#g" -e "s#__HOME__#$HOME#g" ops/com.betting-agent.tick.plist > ~/Library/LaunchAgents/com.betting-agent.tick.plist
+        launchctl load ~/Library/LaunchAgents/com.betting-agent.tick.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.betting-agent.tick</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>__REPO__/.venv/bin/betting-agent</string>
+        <string>tick</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>__REPO__</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- launchd's default PATH lacks the claude CLI (~/.local/bin) and Homebrew;
+             the sessions that tick starts (attempts and the daily director) find
+             `claude` through PATH. -->
+        <key>PATH</key>
+        <string>__HOME__/.local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+    <key>StartInterval</key>
+    <integer>900</integer>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>__REPO__/data/logs/launchd-tick.log</string>
+    <key>StandardErrorPath</key>
+    <string>__REPO__/data/logs/launchd-tick.err</string>
+</dict>
+</plist>

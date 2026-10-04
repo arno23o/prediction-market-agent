@@ -1,0 +1,12 @@
+{
+  "balance": 1000,
+  "balance_dollars": "10.0000",
+  "portfolio_value": 0,
+  "updated_ts": 1751889600,
+  "balance_breakdown": [
+    {
+      "balance": "10.0000",
+      "exchange_index": 0
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "VB-1",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "the cheapest leg of the ladder",
+      "contracts": 1
+    },
+    {
+      "ticker": "VB-2",
+      "side": "yes",
+      "limit_price": "0.3000",
+      "rationale": "the middle leg",
+      "contracts": 1
+    },
+    {
+      "ticker": "VB-3",
+      "side": "yes",
+      "limit_price": "0.5000",
+      "rationale": "the leg nearest the strike",
+      "contracts": 1
+    }
+  ]
+}

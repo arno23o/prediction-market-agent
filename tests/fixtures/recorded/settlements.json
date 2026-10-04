@@ -1,0 +1,31 @@
+{
+  "cursor": "",
+  "settlements": [
+    {
+      "event_ticker": "KXTEST-26JUL08",
+      "fee_cost": "0.0000",
+      "market_result": "yes",
+      "no_count_fp": "0.00",
+      "no_total_cost_dollars": "0.0000",
+      "revenue": 200,
+      "settled_time": "2026-07-06T18:00:00Z",
+      "ticker": "KXTEST-26JUL08-A",
+      "value": 200,
+      "yes_count_fp": "2.00",
+      "yes_total_cost_dollars": "0.8400"
+    },
+    {
+      "event_ticker": "KXTEST-26JUL08",
+      "fee_cost": "0.0000",
+      "market_result": "no",
+      "no_count_fp": "3.00",
+      "no_total_cost_dollars": "0.9900",
+      "revenue": 0,
+      "settled_time": "2026-07-06T18:05:00Z",
+      "ticker": "KXTEST-26JUL08-B",
+      "value": 0,
+      "yes_count_fp": "0.00",
+      "yes_total_cost_dollars": "0.0000"
+    }
+  ]
+}

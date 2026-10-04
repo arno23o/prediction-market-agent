@@ -1,0 +1,19 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "DUP-1",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "first bet on DUP-1",
+      "contracts": 1
+    },
+    {
+      "ticker": "DUP-1",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "duplicate bet on DUP-1",
+      "contracts": 1
+    }
+  ]
+}

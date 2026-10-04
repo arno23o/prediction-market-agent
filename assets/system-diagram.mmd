@@ -1,0 +1,66 @@
+flowchart TB
+    %% Betting agent system diagram: Mermaid version, for comparison with system-diagram.svg.
+    %% Colours follow the kinds: purple = Claude Code session (the model decides),
+    %% blue = Python code (fixed rules), green = the record, grey = external feedback.
+    %% The subgraph "zoom" is the side panel: a zoom into box 1.
+
+    subgraph zoom["Attempt types"]
+        direction TB
+        intro["The four groups differ only in what the attempt reads before it starts."]
+        subgraph groups[" "]
+            direction LR
+            gB["Baseline (1 a day)<br/>Reads nothing about past attempts.<br/>The control group."]
+            gS["Static (6 a day)<br/>Reads the set of 10 most recent<br/>settled attempts."]
+            gD["Director (7 a day)<br/>Reads guidance from the daily review model,<br/>which compares past attempts,<br/>plus its selected examples."]
+            gF["Focused (1 a day)<br/>Reads one focus chosen by the daily review model,<br/>with past attempts selected for that theme."]
+        end
+        day["The scheduler starts 15 attempts a day.<br/>Each one gets a group at random:<br/>1 baseline, 6 static, 7 director, 1 focused."]
+        bets["Each attempt writes one proposal with zero or more bets.<br/>Each bet is one market, one side, and 1 to 3 contracts."]
+        intro --- groups
+        groups --- day
+        groups --- bets
+    end
+
+    a1("(1) Attempt<br/>A new Claude Code session researches the markets<br/>and writes a proposal: its reasoning, a prediction,<br/>and the bets it wants.")
+    a2("(2) Checks and orders<br/>The harness checks every bet against fixed rules<br/>and money limits, then places the orders.")
+    a3("(3) Kalshi exchange<br/>Orders fill at the exchange.<br/>Every market settles within five days.")
+    a4[("(4) Ledger<br/>One database holds every attempt, every bet,<br/>every rejected bet and every result.")]
+    a5("(5) Daily review<br/>Ranks yesterday's attempts against each other<br/>within their daily cohort; writes guidance and picks<br/>example sets for director and focused attempts.")
+
+    day --> a1
+    a1 -->|proposal| a2
+    a2 -->|orders| a3
+    a3 -->|fills and results| a4
+    a2 -->|rejected bets, with reasons| a4
+    a4 -->|attempts and results| a5
+    a5 ==>|guidance and examples| a1
+    a4 -.->|search of past attempts| a1
+
+    classDef claude fill:#F3E8FF,stroke:#7E22CE,stroke-width:1.5px,color:#581C87
+    classDef python fill:#E0F2FE,stroke:#0369A1,stroke-width:1.5px,color:#0C4A6E
+    classDef record fill:#DCFCE7,stroke:#15803D,stroke-width:1.5px,color:#14532D
+    classDef outside fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#1F2937
+    classDef note fill:#FFFFFF,stroke:#D8B4FE,stroke-width:1px,color:#1F2937
+    classDef baseline fill:#E2E8F0,stroke:#475569,stroke-width:1px,color:#1F2937
+    classDef static fill:#EDE9FE,stroke:#6D28D9,stroke-width:1px,color:#1F2937
+    classDef director fill:#E9D5FF,stroke:#581C87,stroke-width:1px,color:#1F2937
+    classDef focused fill:#FEF3C7,stroke:#B45309,stroke-width:1px,color:#1F2937
+    class a1,a5 claude
+    class a2 python
+    class a4 record
+    class a3 outside
+    class intro,day,bets note
+    class gB baseline
+    class gS static
+    class gD director
+    class gF focused
+    style zoom fill:#FCFAFF,stroke:#7E22CE,stroke-width:1.5px,stroke-dasharray:7 5,color:#581C87
+    style groups fill:none,stroke:none
+
+    %% Links 0 to 2 lay out the panel and are hidden. Link 3 is the scheduler starting attempts.
+    %% Link 9 is the Daily review to Attempt link that closes the learning loop.
+    linkStyle default stroke:#374151,stroke-width:1.75px
+    linkStyle 0,1,2 stroke:none
+    linkStyle 9 stroke:#7E22CE,stroke-width:2.5px
+
+

@@ -1,0 +1,71 @@
+{
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-07-07T08:45:00Z",
+    "created_time": "2026-07-07T08:43:44.08064Z",
+    "custom_strike": {
+      "Associated Events": "KXDOGE15M-26JUL070445,KXXRP15M-26JUL070445",
+      "Associated Market Sides": "no,yes",
+      "Associated Markets": "KXDOGE15M-26JUL070445-45,KXXRP15M-26JUL070445-45",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B0DC708203A"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B0DC708203A",
+    "expected_expiration_time": "2026-07-07T08:50:00Z",
+    "expiration_time": "2026-07-07T08:45:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": true,
+    "last_price_dollars": "0.0050",
+    "latest_expiration_time": "2026-07-07T08:45:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXDOGE15M-26JUL070445",
+        "market_ticker": "KXDOGE15M-26JUL070445-45",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXXRP15M-26JUL070445",
+        "market_ticker": "KXXRP15M-26JUL070445-45",
+        "side": "yes"
+      }
+    ],
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "no Target Price: $0.0748851,yes Target Price: $1.1258",
+    "notional_value_dollars": "1.0000",
+    "open_interest_fp": "185.18",
+    "open_time": "2026-07-07T08:43:44Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "no",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "settlement_ts": "2026-07-07T08:45:34.447709Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
+    "strike_type": "custom",
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B0DC708203A-4C78ABD90E5",
+    "title": "no Target Price: $0.0748851,yes Target Price: $1.1258",
+    "updated_time": "2026-07-07T08:45:34.4911Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "185.18",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "no Target Price: $0.0748851,yes Target Price: $1.1258"
+  }
+}

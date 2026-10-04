@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments & secrets
+.env
+*.local
+
+# Data (often large / private — commit deliberately)
+data/
+*.csv
+*.parquet
+*.sqlite
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Private keys and local secrets
+*.pem
+*.key
+.env.*
+!.env.example
+
+# Ledger copies, backups and logs
+*.db
+*.db-*
+*.sqlite3
+*.log
+
+# Local agent worktrees
+.claude/worktrees/

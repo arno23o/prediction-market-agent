@@ -1,0 +1,19 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "TICKER-A",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "the yes side of the pair",
+      "contracts": 1
+    },
+    {
+      "ticker": "TICKER-B",
+      "side": "no",
+      "limit_price": "0.5500",
+      "rationale": "the no side of the pair",
+      "contracts": 1
+    }
+  ]
+}

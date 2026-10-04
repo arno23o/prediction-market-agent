@@ -1,0 +1,180 @@
+{
+  "attempt": "A-0001",
+  "bets": [
+    {
+      "ticker": "T01",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 1 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T02",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 2 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T03",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 3 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T04",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 4 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T05",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 5 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T06",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 6 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T07",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 7 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T08",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 8 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T09",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 9 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T10",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 10 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T11",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 11 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T12",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 12 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T13",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 13 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T14",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 14 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T15",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 15 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T16",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 16 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T17",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 17 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T18",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 18 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T19",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 19 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T20",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 20 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T21",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 21 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T22",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 22 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T23",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 23 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T24",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 24 of 25",
+      "contracts": 1
+    },
+    {
+      "ticker": "T25",
+      "side": "yes",
+      "limit_price": "0.4000",
+      "rationale": "bet 25 of 25",
+      "contracts": 1
+    }
+  ]
+}
