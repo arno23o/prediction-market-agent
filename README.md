@@ -226,7 +226,7 @@ The [index in `docs/`](docs/README.md) lists every published document. The [oper
 
 ## Disclaimer
 
-The project is a personal research project. It is not financial advice, and past results say nothing about future results. It is not affiliated with Kalshi or endorsed by Kalshi. The configuration file in the repository has real trading turned on, because it is the configuration that runs. Anyone else who runs the code should set `live_trading = false` first.
+The project is a personal research project. It is not financial advice, and past results say nothing about future results. It is not affiliated with Kalshi or endorsed by Kalshi. The repository configuration disables real trading by default (`live_trading = false`).
 
 ## License
 
